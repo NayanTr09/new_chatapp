@@ -1,0 +1,15 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /new_app/
+hooks:
+  BeforeInstall:
+    - location: /stopserver.sh
+      timeout: 60
+      runas: ec2-user
+  AfterInstall:
+    - location: /startserver.sh
+      timeout: 60
+      runas: ec2-user
+  
