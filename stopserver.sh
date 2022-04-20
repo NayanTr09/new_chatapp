@@ -1,1 +1,2 @@
-pkill -f runserver
+sudo systemctl stop chatapp
+
